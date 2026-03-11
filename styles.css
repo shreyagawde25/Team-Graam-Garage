@@ -24,6 +24,10 @@ body {
   line-height: 1.6;
 }
 
+body.is-loading {
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -52,10 +56,49 @@ h3,
   border-bottom: 1px solid rgba(176, 138, 87, 0.2);
 }
 
+.intro-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 40%, #1b1b1b 0%, var(--bg-main) 70%);
+  animation: introFade 1.35s ease 1.9s forwards;
+}
+
+.intro-logo-wrap {
+  text-align: center;
+  animation: introLift 1.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.intro-logo-image {
+  width: clamp(120px, 21vw, 220px);
+  margin: 0 auto 1.1rem;
+  filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.45));
+  animation: ringPulse 1.4s ease-in-out;
+}
+
+.intro-logo-text {
+  margin: 0;
+  font-family: "Cinzel", serif;
+  color: var(--text-main);
+  letter-spacing: 0.35em;
+  font-size: 0.82rem;
+}
+
 .brand {
   color: var(--text-main);
   text-decoration: none;
   font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.brand-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
 }
 
 .nav-list,
@@ -287,6 +330,15 @@ textarea:focus {
 
 .footer-logo {
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.footer-logo-image {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
 }
 
 .socials {
@@ -303,6 +355,57 @@ textarea:focus {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: scale(0.82);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes introLift {
+  0% {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes introFade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-loader,
+  .intro-logo-wrap,
+  .intro-logo-image,
+  .reveal {
+    animation: none;
+    transition: none;
+  }
+
+  .intro-loader {
+    display: none;
+  }
+
+  body.is-loading {
+    overflow: auto;
+  }
 }
 
 @media (max-width: 760px) {

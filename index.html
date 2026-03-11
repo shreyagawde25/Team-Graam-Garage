@@ -16,9 +16,23 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="is-loading">
+    <div class="intro-loader" aria-hidden="true">
+      <div class="intro-logo-wrap">
+        <img
+          class="intro-logo-image"
+          src="assets/team-gram-logo.svg"
+          alt="Team Gram Bikes logo"
+        />
+        <p class="intro-logo-text">TEAM GRAM BIKES</p>
+      </div>
+    </div>
+
     <header class="site-header">
-      <a class="brand" href="#hero">TEAM GRAM BIKES</a>
+      <a class="brand" href="#hero">
+        <img src="assets/team-gram-logo.svg" alt="Team Gram Bikes logo" class="brand-logo" />
+        <span>TEAM GRAM BIKES</span>
+      </a>
       <nav aria-label="Primary">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
@@ -170,7 +184,10 @@
     </main>
 
     <footer class="site-footer">
-      <p class="footer-logo">TEAM GRAM BIKES</p>
+      <p class="footer-logo">
+        <img src="assets/team-gram-logo.svg" alt="Team Gram Bikes logo" class="footer-logo-image" />
+        <span>TEAM GRAM BIKES</span>
+      </p>
       <ul class="footer-nav">
         <li><a href="#about">About</a></li>
         <li><a href="#customization">Customize</a></li>
