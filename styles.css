@@ -343,14 +343,66 @@ h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.15; margin: 0 0 1.2re
 .statement-overlay { background: rgba(0, 0, 0, 0.66); }
 .statement-content,
 .manifesto-content { position: relative; }
-.statement-content h2,
-.manifesto-content h2 { max-width: 950px; }
+.statement-content h2 { max-width: 950px; }
 
 /* Manifesto */
 .manifesto {
   display: grid;
   place-items: center;
   background: linear-gradient(180deg, var(--secondary-color), var(--bg-color));
+}
+
+.manifesto-content {
+  max-width: 980px;
+}
+
+.manifesto-lines {
+  border-left: 1px solid var(--border-color);
+  padding-left: clamp(1rem, 3vw, 2rem);
+}
+
+.manifesto-line {
+  margin: 0 0 0.85rem;
+  color: var(--text-color);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 2.1vw, 1.8rem);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.manifesto-line:last-child {
+  margin-bottom: 0;
+}
+
+.manifesto-line-break {
+  margin-top: 1.2rem;
+  color: var(--accent-color);
+}
+
+.reveal.visible .manifesto-line {
+  animation: lineReveal 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal.visible .manifesto-line:nth-child(1) { animation-delay: 80ms; }
+.reveal.visible .manifesto-line:nth-child(2) { animation-delay: 180ms; }
+.reveal.visible .manifesto-line:nth-child(3) { animation-delay: 280ms; }
+.reveal.visible .manifesto-line:nth-child(4) { animation-delay: 380ms; }
+.reveal.visible .manifesto-line:nth-child(5) { animation-delay: 480ms; }
+.reveal.visible .manifesto-line:nth-child(6) { animation-delay: 580ms; }
+
+@keyframes lineReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
 }
 
 /* Footer */
@@ -423,4 +475,5 @@ body:not(.is-loading) .main-content { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .statement-bg { background-attachment: scroll; }
+  .manifesto-line { opacity: 1; transform: none; }
 }
