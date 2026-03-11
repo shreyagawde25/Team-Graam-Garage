@@ -1,6 +1,6 @@
 Current logo source in use:
 
-https://res.cloudinary.com/djqfjrdai/image/upload/e_background_removal/q_auto:best/WhatsApp_Image_2026-03-10_at_7.16.28_PM_dbiano
+https://res.cloudinary.com/djqfjrdai/image/upload/e_background_removal/f_png/q_auto:best/WhatsApp_Image_2026-03-10_at_7.16.28_PM_dbiano.png
 
 Used in:
 - intro animation
