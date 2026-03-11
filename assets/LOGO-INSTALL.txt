@@ -1,0 +1,8 @@
+Place your provided logo image here as:
+
+assets/team-gram-logo.png
+
+The site now uses this exact file path in:
+- intro animation
+- header branding
+- footer branding
