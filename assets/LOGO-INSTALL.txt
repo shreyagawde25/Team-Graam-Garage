@@ -1,0 +1,10 @@
+Current logo source in use:
+
+https://res.cloudinary.com/djqfjrdai/image/upload/q_auto:best/WhatsApp_Image_2026-03-10_at_7.16.28_PM_dbiano
+
+The website now loads the logo directly from this URL in:
+- intro animation
+- header branding
+- footer branding
+
+Note: no local binary logo file is required in this repository.
